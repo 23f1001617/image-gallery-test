@@ -8,62 +8,57 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             transition: background-color 0.3s, color 0.3s;
         }
-        .light-theme {
+        .light {
             background-color: #ffffff;
             color: #000000;
         }
-        .dark-theme {
+        .dark {
             background-color: #333333;
             color: #ffffff;
         }
         .gallery {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            margin: 20px;
+            justify-content: space-between;
         }
-        .gallery-item {
-            margin: 10px;
-            text-align: center;
-            max-width: 300px;
-        }
-        img {
-            width: 100%;
-            height: auto;
+        .gallery img {
+            max-width: 48%;
             border-radius: 8px;
         }
+        .caption {
+            text-align: center;
+            margin-top: 8px;
+        }
         button {
+            margin: 20px 0;
             padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
         }
     </style>
 </head>
-<body class="light-theme">
+<body class="light">
+    <button id="toggle-theme">Toggle Theme</button>
     <div class="gallery">
-        <div class="gallery-item">
-            <img src="https://source.unsplash.com/random/300x200?1" alt="Random Image 1">
-            <p>Caption for Image 1</p>
+        <div>
+            <img src="https://images.unsplash.com/photo-1601758002751-0f5b4e9b3a3e" alt="Image 1">
+            <div class="caption">Beautiful Landscape 1</div>
         </div>
-        <div class="gallery-item">
-            <img src="https://source.unsplash.com/random/300x200?2" alt="Random Image 2">
-            <p>Caption for Image 2</p>
+        <div>
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308" alt="Image 2">
+            <div class="caption">Beautiful Landscape 2</div>
         </div>
     </div>
-    <button onclick="toggleTheme()">Toggle Light/Dark Theme</button>
-
     <script>
-        function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle('dark-theme');
-            body.classList.toggle('light-theme');
-        }
+        const toggleButton = document.getElementById('toggle-theme');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
+        });
     </script>
+    <!-- build-id: 2023-10-01T12:00:00Z -->
 </body>
 </html>
-<!-- build-id: 2025-10-16T07:31:17.255505 -->
+<!-- build-id: 2025-10-16T11:28:58.500743 -->
