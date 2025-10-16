@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-theme {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .dark-theme {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .gallery-item {
+            margin: 10px;
+            text-align: center;
+            max-width: 300px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://source.unsplash.com/random/300x200?1" alt="Random Image 1">
+            <p>Caption for Image 1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="https://source.unsplash.com/random/300x200?2" alt="Random Image 2">
+            <p>Caption for Image 2</p>
+        </div>
+    </div>
+    <button onclick="toggleTheme()">Toggle Light/Dark Theme</button>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+        }
+    </script>
+</body>
+</html>
+<!-- build-id: 2025-10-16T07:31:17.255505 -->
